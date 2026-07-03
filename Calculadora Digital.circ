@@ -837,36 +837,75 @@
     <a name="circuit" val="divisor"/>
     <a name="clabel" val="divisor"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
-    <comp lib="0" loc="(590,370)" name="Pin">
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(100,150)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(430,370)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="S"/>
       <a name="output" val="true"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(90,190)" name="Pin">
+    <comp lib="0" loc="(60,200)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(90,240)" name="Pin">
+    <comp lib="0" loc="(60,240)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="B"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="4" loc="(320,140)" name="Register">
+    <comp lib="0" loc="(60,330)" name="Clock"/>
+    <comp lib="1" loc="(160,120)" name="AND Gate">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="1" loc="(160,180)" name="AND Gate">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="1" loc="(240,160)" name="OR Gate">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="4" loc="(390,210)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
       <a name="width" val="4"/>
     </comp>
     <comp loc="(320,230)" name="subtrator"/>
-    <comp loc="(540,330)" name="contador"/>
-    <wire from="(100,190)" to="(100,230)"/>
-    <wire from="(100,230)" to="(290,230)"/>
-    <wire from="(530,340)" to="(530,370)"/>
-    <wire from="(530,340)" to="(540,340)"/>
-    <wire from="(530,370)" to="(590,370)"/>
-    <wire from="(90,190)" to="(100,190)"/>
-    <wire from="(90,240)" to="(290,240)"/>
+    <comp loc="(380,330)" name="contador"/>
+    <wire from="(100,100)" to="(110,100)"/>
+    <wire from="(100,140)" to="(100,150)"/>
+    <wire from="(100,140)" to="(110,140)"/>
+    <wire from="(100,150)" to="(100,160)"/>
+    <wire from="(100,160)" to="(110,160)"/>
+    <wire from="(100,80)" to="(100,100)"/>
+    <wire from="(100,80)" to="(450,80)"/>
+    <wire from="(160,120)" to="(170,120)"/>
+    <wire from="(160,180)" to="(190,180)"/>
+    <wire from="(170,120)" to="(170,140)"/>
+    <wire from="(170,140)" to="(190,140)"/>
+    <wire from="(240,160)" to="(250,160)"/>
+    <wire from="(250,160)" to="(250,230)"/>
+    <wire from="(250,230)" to="(290,230)"/>
+    <wire from="(320,240)" to="(390,240)"/>
+    <wire from="(370,280)" to="(370,330)"/>
+    <wire from="(370,280)" to="(390,280)"/>
+    <wire from="(370,330)" to="(380,330)"/>
+    <wire from="(370,340)" to="(370,370)"/>
+    <wire from="(370,340)" to="(380,340)"/>
+    <wire from="(370,370)" to="(430,370)"/>
+    <wire from="(450,80)" to="(450,240)"/>
+    <wire from="(60,200)" to="(110,200)"/>
+    <wire from="(60,240)" to="(290,240)"/>
+    <wire from="(60,330)" to="(80,330)"/>
+    <wire from="(80,160)" to="(80,170)"/>
+    <wire from="(80,170)" to="(80,180)"/>
+    <wire from="(80,180)" to="(80,190)"/>
+    <wire from="(80,190)" to="(80,330)"/>
+    <wire from="(80,330)" to="(370,330)"/>
   </circuit>
   <circuit name="contador">
     <a name="circuit" val="contador"/>
