@@ -63,6 +63,9 @@
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
     </comp>
+    <comp lib="0" loc="(60,160)" name="Pin">
+      <a name="appearance" val="classic"/>
+    </comp>
     <comp lib="0" loc="(80,200)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="A"/>
@@ -107,7 +110,11 @@
     </comp>
     <comp lib="7" loc="(530,90)" name="BCD_to_7_Segment_decoder"/>
     <comp lib="7" loc="(590,90)" name="BCD_to_7_Segment_decoder"/>
+    <comp loc="(180,170)" name="multiplexador"/>
     <comp loc="(320,220)" name="calculadora"/>
+    <wire from="(130,120)" to="(130,180)"/>
+    <wire from="(130,120)" to="(330,120)"/>
+    <wire from="(130,180)" to="(150,180)"/>
     <wire from="(140,240)" to="(140,280)"/>
     <wire from="(140,240)" to="(190,240)"/>
     <wire from="(140,280)" to="(140,350)"/>
@@ -116,8 +123,10 @@
     <wire from="(160,270)" to="(220,270)"/>
     <wire from="(160,310)" to="(160,370)"/>
     <wire from="(160,370)" to="(220,370)"/>
+    <wire from="(180,170)" to="(190,170)"/>
     <wire from="(180,230)" to="(180,310)"/>
     <wire from="(180,310)" to="(190,310)"/>
+    <wire from="(190,170)" to="(190,200)"/>
     <wire from="(210,220)" to="(210,230)"/>
     <wire from="(220,260)" to="(220,270)"/>
     <wire from="(250,200)" to="(260,200)"/>
@@ -129,8 +138,9 @@
     <wire from="(280,230)" to="(280,380)"/>
     <wire from="(280,230)" to="(290,230)"/>
     <wire from="(320,220)" to="(330,220)"/>
+    <wire from="(330,120)" to="(330,220)"/>
     <wire from="(330,220)" to="(360,220)"/>
-    <wire from="(330,30)" to="(330,220)"/>
+    <wire from="(330,30)" to="(330,120)"/>
     <wire from="(330,30)" to="(340,30)"/>
     <wire from="(360,260)" to="(360,360)"/>
     <wire from="(360,360)" to="(430,360)"/>
@@ -139,10 +149,13 @@
     <wire from="(420,220)" to="(450,220)"/>
     <wire from="(480,170)" to="(480,200)"/>
     <wire from="(540,170)" to="(540,200)"/>
+    <wire from="(60,160)" to="(150,160)"/>
     <wire from="(600,170)" to="(600,200)"/>
-    <wire from="(80,200)" to="(190,200)"/>
+    <wire from="(80,200)" to="(90,200)"/>
     <wire from="(80,230)" to="(180,230)"/>
     <wire from="(80,380)" to="(280,380)"/>
+    <wire from="(90,170)" to="(150,170)"/>
+    <wire from="(90,170)" to="(90,200)"/>
     <wire from="(90,280)" to="(140,280)"/>
     <wire from="(90,310)" to="(160,310)"/>
   </circuit>
@@ -238,22 +251,92 @@
     <a name="circuit" val="multiplexador"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(150,160)" name="Pin">
+    <comp lib="0" loc="(120,140)" name="Pin">
       <a name="appearance" val="classic"/>
+      <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(150,180)" name="Pin">
+    <comp lib="0" loc="(120,310)" name="Pin">
       <a name="appearance" val="classic"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(130,300)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
     </comp>
     <comp lib="0" loc="(150,80)" name="Pin">
       <a name="appearance" val="classic"/>
     </comp>
-    <comp lib="0" loc="(540,150)" name="Pin">
+    <comp lib="0" loc="(170,260)" name="Splitter">
+      <a name="appear" val="right"/>
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(230,190)" name="Splitter">
+      <a name="appear" val="right"/>
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(270,260)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(630,180)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
+      <a name="width" val="4"/>
     </comp>
-    <comp lib="1" loc="(410,150)" name="OR Gate"/>
-    <wire from="(410,150)" to="(540,150)"/>
+    <comp lib="0" loc="(90,330)" name="Constant">
+      <a name="value" val="0x10"/>
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="1" loc="(270,220)" name="NOT Gate">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="1" loc="(300,160)" name="AND Gate">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="1" loc="(320,240)" name="AND Gate">
+      <a name="inputs" val="3"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="1" loc="(500,180)" name="OR Gate">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="3" loc="(190,320)" name="Comparator">
+      <a name="mode" val="unsigned"/>
+    </comp>
+    <wire from="(120,140)" to="(250,140)"/>
+    <wire from="(120,310)" to="(130,310)"/>
+    <wire from="(130,300)" to="(130,310)"/>
+    <wire from="(130,310)" to="(150,310)"/>
+    <wire from="(150,80)" to="(210,80)"/>
+    <wire from="(170,260)" to="(230,260)"/>
+    <wire from="(190,330)" to="(230,330)"/>
+    <wire from="(210,150)" to="(210,160)"/>
+    <wire from="(210,160)" to="(210,170)"/>
+    <wire from="(210,170)" to="(210,180)"/>
+    <wire from="(210,80)" to="(210,150)"/>
+    <wire from="(230,190)" to="(230,220)"/>
+    <wire from="(230,190)" to="(250,190)"/>
+    <wire from="(230,220)" to="(240,220)"/>
+    <wire from="(230,240)" to="(230,260)"/>
+    <wire from="(230,240)" to="(270,240)"/>
+    <wire from="(230,300)" to="(230,330)"/>
+    <wire from="(230,300)" to="(250,300)"/>
+    <wire from="(250,180)" to="(250,190)"/>
+    <wire from="(250,270)" to="(250,280)"/>
+    <wire from="(250,280)" to="(250,290)"/>
+    <wire from="(250,290)" to="(250,300)"/>
+    <wire from="(300,160)" to="(450,160)"/>
+    <wire from="(320,240)" to="(330,240)"/>
+    <wire from="(330,200)" to="(330,240)"/>
+    <wire from="(330,200)" to="(450,200)"/>
+    <wire from="(500,180)" to="(630,180)"/>
+    <wire from="(90,330)" to="(150,330)"/>
   </circuit>
   <circuit name="meio_somador">
     <a name="circuit" val="meio_somador"/>
